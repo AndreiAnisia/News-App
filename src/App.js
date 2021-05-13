@@ -8,6 +8,7 @@ const alanKey =
 
 const App = () => {
    const [newsArticles, setNewsArticles] = useState([]);
+   const [activeArticle, setActiveArticle] = useState(-1);
    const classes = useStyles();
 
    useEffect(() => {
@@ -17,6 +18,9 @@ const App = () => {
             if (command === 'newHeadlines') {
                console.log(articles);
                setNewsArticles(articles);
+               setActiveArticle(-1);
+            } else if (command === 'highlight') {
+               setActiveArticle((prevActiveArticle) => prevActiveArticle + 1);
             }
          },
       });
@@ -31,7 +35,7 @@ const App = () => {
                src="https://46ba123xc93a357lc11tqhds-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/alan.jpg"
             />
          </div>
-         <NewsCards articles={newsArticles} />
+         <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       </div>
    );
 };

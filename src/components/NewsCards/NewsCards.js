@@ -21,7 +21,7 @@ const infoCards = [
    {
       color: '#283593',
       title: 'News by Sources',
-      info: 'BBC News, TechCrunch, Buzzfeed, Business Insider, ABC News...',
+      info: 'BBC News, TechCrunch, Fox News, Buzzfeed, Business Insider, ABC News...',
       text: 'Give me the news from Buzzfeed',
    },
 ];

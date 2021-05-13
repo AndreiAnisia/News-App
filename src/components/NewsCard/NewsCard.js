@@ -27,7 +27,6 @@ const NewsCard = ({
             .fill()
             .map((_, j) => refs[j] || createRef())
       );
-      console.log(elRefs);
    }, []);
 
    useEffect(() => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Grow, Typography } from '@material-ui/core';
 
-import useStyles from './styles';
 import NewsCard from '../NewsCard/NewsCard';
+import useStyles from './styles.js';
 
 const infoCards = [
    { color: '#00838f', title: 'Latest News', text: 'Give me the latest news' },
@@ -51,15 +51,17 @@ const NewsCards = ({ articles, activeArticle }) => {
                         className={classes.card}
                         style={{ backgroundColor: infoCard.color }}
                      >
-                        <Typography variant="h5">{infoCard.title}</Typography>
+                        <Typography variant="h5" component="h5">
+                           {infoCard.title}
+                        </Typography>
                         {infoCard.info ? (
-                           <Typography variant="h6">
-                              <strong>{infoCard.title.split(' ')[2]}</strong>
+                           <Typography variant="h6" component="h6">
+                              <strong>{infoCard.title.split(' ')[2]}</strong>:{' '}
                               <br />
                               {infoCard.info}
                            </Typography>
                         ) : null}
-                        <Typography variant="h6">
+                        <Typography variant="h6" component="h6">
                            Try saying: <br /> <i>{infoCard.text}</i>
                         </Typography>
                      </div>
@@ -88,9 +90,9 @@ const NewsCards = ({ articles, activeArticle }) => {
                   style={{ display: 'flex' }}
                >
                   <NewsCard
-                     article={article}
-                     i={i}
                      activeArticle={activeArticle}
+                     i={i}
+                     article={article}
                   />
                </Grid>
             ))}

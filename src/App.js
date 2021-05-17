@@ -4,8 +4,8 @@ import NewsCards from './components/NewsCards/NewsCards';
 import useStyles from './styles';
 import wordsToNumbers from 'words-to-numbers';
 
-const alanKey = process.env.REACT_APP_API_KEY;
-
+const alanKey =
+   '43c3a25714e0ec14cb772ad893afc26a2e956eca572e1d8b807a3e2338fdd0dc/stage';
 const App = () => {
    const [newsArticles, setNewsArticles] = useState([]);
    const [activeArticle, setActiveArticle] = useState(-1);
